@@ -28,23 +28,15 @@ function App() {
   }
 
   function edit(id) {
-    let newItemFlag = false;
     const newTodos = [...toDoList];
+    const todo = newTodos.find(todo => todo.id === id);
+     // change the edit flag to true
+    todo.edit = true;
+    // only allow one edit at a time, toggle off others editing mode
     newTodos.forEach(todo => {
-      if(todo.todo === null){
-        newItemFlag = true;
-      }
+      if(todo.id !== id) todo.edit = false
     })
-    if(!newItemFlag){
-      const todo = newTodos.find(todo => todo.id === id)
-      // only allow one edit at a time
-      newTodos.forEach(todo => {
-        if(todo.id !== id) todo.edit = false
-      })
-      // change the edit flag to true
-      todo.edit = true;
-      setToDoList(newTodos);
-    }
+    setToDoList(newTodos);
   }
 
   function editName(id, name) {
@@ -56,23 +48,15 @@ function App() {
   }
 
   function addNew(){
-    // editing mode indicator
-    let stopFlag = false;
     const newTodos = [...toDoList];
-    newTodos.forEach(todo => {
-      if(todo.edit === true) stopFlag = true;
-    });
-
-    if(!stopFlag){
-      const todo = {
-        id: generateUUID(),
-        todo: null,
-        done: false,
-        edit: true
-      }
-      newTodos.push(todo);
-      setToDoList(newTodos);
+    const todo = {
+      id: generateUUID(),
+      todo: null,
+      done: false,
+      edit: true
     }
+    newTodos.push(todo);
+    setToDoList(newTodos);
   }
 
   return (

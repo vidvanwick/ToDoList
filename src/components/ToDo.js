@@ -19,14 +19,14 @@ const ToDo = ({ todo, edit, editName }) => {
 
     return (
         todo.edit? // if edit mode === true
-        <div className={ classes.join(' ') } id={todo.id}>
+        (<div className={ classes.join(' ') } id={todo.id}>
             <input className={ classes.join(' ') } ref={todoRef} type="text"/>
             <button style={{ marginLeft: "1rem" }} onClick={handleButtonOnClick}>Save</button>
-        </div>
-        : // if edit mode === false
-        <div className={ classes.join(' ') } onClick={handleClick} id={todo.id}>
+        </div>)
+        : // else if edit mode === false
+        (<div className={ classes.join(' ') } onClick={handleClick} id={todo.id}>
             {todo.todo}
-        </div>
+        </div>)
     )
 }
 

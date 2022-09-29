@@ -1,13 +1,13 @@
 import React from 'react'
 import ToDo from './ToDo'
 
-const ToDoList = ({ toDoList, toggle }) => {
+const ToDoList = ({ toDoList, edit, editName }) => {
     return (
         <div>
             {
                 toDoList.map(todo => {
                     return (
-                        <ToDo todo={todo} toggle={toggle} key={todo.id} />
+                        <ToDo todo={todo} key={todo.id} edit={edit} editName={editName}/>
                     )
                 })
             }

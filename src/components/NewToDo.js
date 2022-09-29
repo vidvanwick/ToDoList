@@ -1,8 +1,13 @@
-import React from 'react'
+import React, { useRef } from 'react'
 
-const NewToDo = ({ toDoList }) => {
+const NewToDo = ({ addNew }) => {
+
+    function handleClick(){
+        addNew();
+    }
+
     return (
-        <div className={ 'todo' }>
+        <div className={ 'todo' } onClick={handleClick}>
             +
         </div>
     )

@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "todo": "Learn React.js",
+    "done": false
+  },
+  {
+    "id": 2,
+    "todo": "Practice React.js",
+    "done": false
+  },
+  {
+    "id": 3,
+    "todo": "Master React.js",
+    "done": false
+  }
+]

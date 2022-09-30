@@ -10,7 +10,7 @@ const ToDo = ({ todo, edit, saveName, setDone }) => {
 
     }
 
-    function handleButtonOnClick(){
+    function handleSaveClick(){
         const name = todoRef.current.value;
         // not allow to save when name is empty
         if(name === "") return;
@@ -34,7 +34,7 @@ const ToDo = ({ todo, edit, saveName, setDone }) => {
             />
             <button
                 style={{ marginLeft: "1rem" }}
-                onClick={handleButtonOnClick}
+                onClick={handleSaveClick}
             >Save
             </button>
         </div>

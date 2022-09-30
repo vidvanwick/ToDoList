@@ -18,6 +18,7 @@ code {
   padding: 5px;
   margin: 5px;
   border-radius: 10px;
+  width: 80%;
 }
 
 .todo:hover {

@@ -30,6 +30,8 @@ function App() {
   function edit(id) {
     const newTodos = [...toDoList];
     const todo = newTodos.find(todo => todo.id === id);
+    // not allow to edit if is done
+    if(todo.done) return;
      // change the edit flag to true
     todo.edit = true;
     // only allow one edit at a time, toggle off others editing mode
@@ -59,11 +61,25 @@ function App() {
     setToDoList(newTodos);
   }
 
+  function setDone(id){
+    const newTodos = [...toDoList];
+    let todo = newTodos.find(item => item.id === id);
+    todo.done = true;
+    setToDoList(newTodos);
+  }
+
   return (
     <div className="App">
       <Title />
-      <ToDoList toDoList={toDoList} edit={edit} editName={editName}/>
-      <NewToDo addNew={addNew}/>
+      <ToDoList
+        toDoList={toDoList}
+        edit={edit}
+        editName={editName}
+        setDone={setDone}
+      />
+      <NewToDo
+        addNew={addNew}
+      />
     </div>
   );
 }

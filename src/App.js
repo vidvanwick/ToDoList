@@ -41,7 +41,7 @@ function App() {
     setToDoList(newTodos);
   }
 
-  function editName(id, name) {
+  function saveName(id, name) {
     const newTodos = [...toDoList];
     const todo = newTodos.find(todo => todo.id === id)
     todo.todo = name;
@@ -74,7 +74,7 @@ function App() {
       <ToDoList
         toDoList={toDoList}
         edit={edit}
-        editName={editName}
+        saveName={saveName}
         setDone={setDone}
       />
       <NewToDo

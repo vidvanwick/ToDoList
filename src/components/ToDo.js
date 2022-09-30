@@ -1,6 +1,6 @@
 import React, { useRef } from 'react'
 
-const ToDo = ({ todo, edit, editName, setDone }) => {
+const ToDo = ({ todo, edit, saveName, setDone }) => {
     
     const classes = ['todo']
     const todoRef = useRef();
@@ -14,7 +14,7 @@ const ToDo = ({ todo, edit, editName, setDone }) => {
         const name = todoRef.current.value;
         // not allow to save when name is empty
         if(name === "") return;
-        editName(todo.id, name);
+        saveName(todo.id, name);
     }
 
     function handleDoneClick(){
